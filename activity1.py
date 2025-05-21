@@ -1,14 +1,27 @@
 import re
 import random
-DESTINATIONS={
-    "beaches":['Bali','Maldives','Phuket'],
-    "mountains":["Swiss Alps","Rocky Mountains",'Himalayas'],
-    "cities":['Tokyo',"Paris","New York"]
+DESTINATIONS = {
+    "beaches": [
+        'Bali', 'Maldives', 'Phuket', 'Maui', 'Boracay', 'Cancun', 'Copacabana',
+        'Bondi Beach', 'Santorini', 'Seychelles', 'Tulum', 'Waikiki Beach', 'Navagio Beach'
+    ],
+    "mountains": [
+        'Swiss Alps', 'Rocky Mountains', 'Himalayas', 'Andes', 'Mount Fuji', 'Dolomites',
+        'Carpathians', 'Caucasus Mountains', 'Atlas Mountains', 'Mount Kilimanjaro',
+        
+    ],
+    "cities": [
+        'Tokyo', 'Paris', 'New York', 'London', 'Dubai', 'Rome', 'Bangkok', 'Istanbul',
+        'Barcelona', 'Singapore', 'Los Angeles', 'Amsterdam', 'Seoul', 'Berlin',
+ 
+    ]
 }
+
 def normalize(text):
     return re.sub(r'\s+'," ",text.strip().lower())
 def recommend():
     choice=normalize(input('TravelBot: Beaches,Mountains, or cities'))
+
     if choice not in DESTINATIONS:
         print("TravelBot: Sorry, I don't know that type.")
         return
@@ -29,7 +42,11 @@ def packing_tips():
     print(f"TravelBot: Packing tips for {days} days in {location}:")
     print("-Versatile clothes")
     print("-Charger and adapters")
-    print("-Versatile clothes")
+    print("-Walking shoes")
+    print("-City map or travel app")
+    print("-Reusable water bottle")
+    print("-Light jacket or umbrella")
+
 def show_help():
     print("I can:")
     print("- suggest destinations (type 'recommend')")
